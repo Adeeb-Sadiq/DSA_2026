@@ -1,4 +1,4 @@
-package linkedlistinplacemanipulation;
+package linked_list_in_place_manipulation;
 
 public class ReverseLinkedList {
     static void main() {
