@@ -19,4 +19,13 @@ public class TreeNode {
 
         return root;
     }
+
+    public static void traverse(TreeNode root) {
+        if(root == null) return;
+
+        // inorder
+        System.out.print(root.val + " ");
+        traverse(root.left);
+        traverse(root.right);
+    }
 }
