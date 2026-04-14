@@ -19,4 +19,16 @@ public class TreeNode {
 
         return root;
     }
+
+    public static TreeNode SymmetricTree() {
+        TreeNode root = new TreeNode(1);
+        TreeNode second = new TreeNode(2); root.left = second;
+        TreeNode third = new TreeNode(2); root.right = third;
+        TreeNode fourth = new TreeNode(3); second.left = fourth;
+        TreeNode fifth = new TreeNode(4);  second.right = fifth;
+        TreeNode sixth = new TreeNode(4); third.left = sixth;
+        TreeNode seventh = new TreeNode(3); third.right = seventh;
+
+        return root;
+    }
 }
