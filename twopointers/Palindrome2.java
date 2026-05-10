@@ -6,7 +6,6 @@ public class Palindrome2 {
         char[] str = s.toCharArray();
         int i = 0;
         int j = s.length() - 1;
-        boolean delete = true;
 
         while(i < j) {
             if(str[i] == str[j]) {
