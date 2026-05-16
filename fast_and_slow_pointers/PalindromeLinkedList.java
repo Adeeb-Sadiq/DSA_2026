@@ -1,0 +1,52 @@
+package fast_and_slow_pointers;
+
+
+public class PalindromeLinkedList {
+    static void main() {
+        ListNode head = ListNode.getList(new int[] {1, 2, 2, 1});
+        ListNode head2 = ListNode.getList(new int[]{1, 2});
+        System.out.println(isPalindrome(head));
+        System.out.println(isPalindrome(head2));
+    }
+
+    public static boolean isPalindrome(ListNode head) {
+
+        if(head == null || head.next == null) {
+            return true;
+        }
+
+        ListNode slow = head;
+        ListNode fast = head;
+
+        while(fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        ListNode secondHalf = reverse(slow);
+        ListNode firstHalf = head;
+
+        while(secondHalf != null) {
+            if(firstHalf.val != secondHalf.val) return false;
+            firstHalf = firstHalf.next;
+            secondHalf = secondHalf.next;
+        }
+
+        return true;
+    }
+
+    private static ListNode reverse(ListNode head) {
+        ListNode prev = null;
+        ListNode curr = head;
+
+        while(curr != null) {
+            ListNode next = curr.next;
+
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+
+        return prev;
+    }
+}
