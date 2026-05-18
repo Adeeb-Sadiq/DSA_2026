@@ -29,4 +29,16 @@ public class TreeNode {
         traverse(root.left);
         traverse(root.right);
     }
+
+    public static TreeNode getTree2() {
+        TreeNode root = new TreeNode(1);
+        TreeNode second = new TreeNode(2); root.left = second;
+        TreeNode third = new TreeNode(4); second.left = third;
+        TreeNode fourth = new TreeNode(5); second.right = fourth;
+        TreeNode fifth = new TreeNode(3); root.right = fifth;
+        TreeNode sixth = new TreeNode(6); fifth.left = sixth;
+        TreeNode seventh = new TreeNode(8); fifth.right = seventh;
+
+        return root;
+    }
 }
